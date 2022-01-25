@@ -23,7 +23,11 @@ def webhook():
     return r
 
 def makeResponse(req):
-    
+    return {
+    "speech": "the forecast for tomorrow is good",
+    "displayText": "the forecast for tomorrow is good",
+    "source": "dialogflow-weather-webhook"
+    }
     result = req.get("queryResult")
     parameters = result.get("parameters")
     city = parameters.get("geo-city")
